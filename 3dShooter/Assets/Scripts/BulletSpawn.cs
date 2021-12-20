@@ -12,7 +12,7 @@ public class BulletSpawn : MonoBehaviour
 
     void Start()
     {
-        currentAmmo = bulletFire;
+        currentAmmo = bulletFire;        
     }
 
     
@@ -20,12 +20,7 @@ public class BulletSpawn : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject bullet = Instantiate(currentAmmo, transform.position, Quaternion.identity);
-
-            bullet.transform.forward = (GameObject.FindGameObjectWithTag("MainCamera").transform.position.normalized);
-            bullet.GetComponent<Rigidbody>().AddForce(GameObject.FindGameObjectWithTag("Crosshair").transform.position - transform.position,ForceMode.Impulse);
-
-
+            GameObject bullet = Instantiate(currentAmmo, transform.position, transform.rotation);
         }
         if (Input.GetKey(KeyCode.Alpha1))
         {

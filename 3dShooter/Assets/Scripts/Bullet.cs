@@ -3,25 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
-{
-    // Start is called before the first frame update
+{    
+    public int damage;
+    
+    float speed = 30f;
     void Start()
-    {
-        
+    {        
     }
-
-    // Update is called once per frame
+        
     void Update()
     {
+        transform.Translate(Vector3.forward*speed*Time.deltaTime);
         
     }
     private void OnCollisionEnter(Collision other)
-    {
-        Enemy enemy = other.gameObject.GetComponent<Enemy>();
-        if (enemy != null)
-        {
-            enemy.GetDamage(1);
-        }
-        Destroy(gameObject);
+    {        
+        Destroy(gameObject);        
     }
 }

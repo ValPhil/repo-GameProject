@@ -123,3 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05e9e392708ab64eb94e159663d66f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMine: 1
+  damage: 1

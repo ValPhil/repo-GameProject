@@ -227,3 +227,4 @@ MonoBehaviour:
   controller: {fileID: 5409196691453564735}
   collider: {fileID: 0}
   speed: 20
+  gravity: -0.8

@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Movement2 : MonoBehaviour
 {
-    public Rigidbody controller;
-    public Collider collider;
-    public float speed;
+    public Rigidbody controller;    
+    public float speed;    
     bool isJumping = true;
     public float gravity = -0.8f;
     private Vector3 falling;
@@ -41,12 +40,16 @@ public class Movement2 : MonoBehaviour
 
         falling.y += gravity * Time.deltaTime;
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision other)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground")
         {
             isJumping = false;
             falling.y = 0F;
         }
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        isJumping = true;
+    }    
 }
