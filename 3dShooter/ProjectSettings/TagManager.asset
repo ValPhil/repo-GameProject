@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Crosshair
   - Enemy
+  - lava
+  - PatrolWaypoints
+  - Portal
   layers:
   - Default
   - TransparentFX

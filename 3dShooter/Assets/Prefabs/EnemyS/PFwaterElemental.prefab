@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4184873731814673297}
   - component: {fileID: 3579988444908047726}
   - component: {fileID: 1172665659066522763}
+  - component: {fileID: 3416734132394452522}
+  - component: {fileID: 783758246100342306}
   m_Layer: 0
   m_Name: PFwaterElemental
   m_TagString: Enemy
@@ -91,10 +93,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.008
-  m_Height: 0.016274562
+  m_Radius: 0.007
+  m_Height: 0.02
   m_Direction: 1
-  m_Center: {x: 0, y: 0.007843695, z: 0.00018303515}
+  m_Center: {x: 0, y: 0.008, z: 0}
 --- !u!114 &1172665659066522763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,4 +109,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612a3695ca9ea1b4b9aaddf0fdf77a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 0
   MaxHealth: 3
+--- !u!195 &3416734132394452522
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827762214597541868}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.01
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.00001
+  m_BaseOffset: 0.001
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &783758246100342306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827762214597541868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94283051f22ec144b94d02f9db11f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

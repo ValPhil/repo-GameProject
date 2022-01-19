@@ -23,10 +23,9 @@ public class Explosion : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        Enemy enemy = other.gameObject.GetComponent<Enemy>();
-        if (enemy != null)
+        if (other.gameObject.tag == "Player")
         {
-            enemy.GetDamage(3);
+            other.gameObject.GetComponent<Status>().Health -= 10;
         }
 
     }

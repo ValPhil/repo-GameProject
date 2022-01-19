@@ -9,7 +9,7 @@ public class Door : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && other.gameObject.GetComponent<Status>().HasRedKey == true)
+        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && other.gameObject.GetComponent<Status>().HasRedKey == true && isOpen == false)
         {
             //transform.localRotation = Quaternion.Euler(0, -90, 0);
             isOpen = true;
@@ -17,14 +17,14 @@ public class Door : MonoBehaviour
     }
     private void Update()
     {
-        if(rotation <= -90)
+        if(rotation <= -89)
         {
             rotation = -90;
         }
-        if (isOpen == true)
+        if (isOpen == true && rotation >= -89)
         {
             rotation -= 30 * Time.deltaTime;
             transform.localRotation = Quaternion.Euler(0, rotation, 0);
         }
-    }
+    }    
 }

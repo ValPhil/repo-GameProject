@@ -19,7 +19,7 @@ public class Movement2 : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        controller.velocity = transform.forward * y * speed + transform.right * x * speed;// - transform.up*9.8f;
+        controller.velocity = transform.forward * y * speed + transform.right * x * speed;
 
         
         

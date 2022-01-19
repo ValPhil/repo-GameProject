@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
     void Start()
     {
-        Instantiate(enemy,transform.position,Quaternion.identity);
+        Instantiate(enemy, GameObject.FindGameObjectWithTag("PatrolWaypoints").transform.GetChild(0).position, Quaternion.identity);
     }
 
     // Update is called once per frame

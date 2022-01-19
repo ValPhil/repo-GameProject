@@ -8,6 +8,7 @@ public class Turret : MonoBehaviour
     public GameObject FirePoint;
     bool inRange = false;
     float t = 3f;
+    public float ShootingSpeed;
 
     private void OnTriggerStay(Collider other)
     {
@@ -35,12 +36,7 @@ public class Turret : MonoBehaviour
         }
         
     }
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (inRange == true)

@@ -9,18 +9,28 @@ public class BulletSpawn : MonoBehaviour
     public GameObject bulletAir;
     public GameObject bulletEarth;    
     private GameObject currentAmmo;
+    private float t = 3;
+    public GameObject player;
+    private int mana;
 
     void Start()
     {
-        currentAmmo = bulletFire;        
+        currentAmmo = bulletFire;
+        
     }
 
     
     void Update()
     {
+        mana = player.GetComponent<Status>().Mana;
+        t += Time.deltaTime;
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject bullet = Instantiate(currentAmmo, transform.position, transform.rotation);
+            if (t>1 && mana >= 20)
+            {
+                shoot();
+                t = 0;
+            }
         }
         if (Input.GetKey(KeyCode.Alpha1))
         {
@@ -38,5 +48,10 @@ public class BulletSpawn : MonoBehaviour
         {
             currentAmmo = bulletEarth;
         }
+    }
+    private void shoot()
+    {
+        player.GetComponent<Status>().Mana -= 20;
+        GameObject bullet = Instantiate(currentAmmo, transform.position, transform.rotation);     
     }
 }
